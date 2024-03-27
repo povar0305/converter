@@ -2,15 +2,12 @@
 import { useStore } from 'vuex'
 import { ref } from 'vue'
 import VInput from '@/components/v-input.vue'
+import VSelect from '@/components/v-select.vue'
 
 const store = useStore()
+
 store.dispatch('fetchCurrencyList')
-const selectedCurrency = ref(store.state.currencyList[0])
-
-function setCurrency(value) {
-  selectedCurrency.value = value
-}
-
+const selectedCurrency = ref(Object.keys(store.state.currencyList)[0])
 const searchQ = ref('')
 </script>
 
@@ -18,11 +15,8 @@ const searchQ = ref('')
   <div class="header">
     <v-input v-model.trim="searchQ" placeholder="Search" />
     <div class="header-select">
-      <select @change="setCurrency($event.target.value)">
-        <option v-for="(currency, i) in store.state.currencyList" :key="i" :value="i">
-          {{ i }}
-        </option>
-      </select>
+      <span>Currency</span>
+      <v-select v-model="selectedCurrency" :list="store.state.currencyList" />
     </div>
   </div>
 </template>
@@ -40,7 +34,17 @@ const searchQ = ref('')
   }
 
   .header-select {
-    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    span {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14.52px;
+      text-align: left;
+      color: var(--color-input-text);
+    }
   }
 }
 </style>
