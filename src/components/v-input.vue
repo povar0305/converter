@@ -5,19 +5,22 @@ const props = withDefaults(
     modelValue: string
     label?: string
     type?: string
+    disabled?: boolean
   }>(),
   {
     placeholder: '',
     label: '',
-    type: 'text'
+    type: 'text',
+    disabled: false
   }
 )
 </script>
 
 <template>
-  <div class="wrapper custom-input">
+  <div class="custom-input">
     <div class="label">{{ label }}</div>
     <input
+      :disabled="disabled"
       :placeholder="placeholder"
       :type="type"
       :value="modelValue"
@@ -27,7 +30,7 @@ const props = withDefaults(
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
+.custom-input {
   display: flex;
   flex-direction: column;
   gap: 4px;
