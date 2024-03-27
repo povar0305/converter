@@ -3,24 +3,46 @@ const props = withDefaults(
   defineProps<{
     placeholder?: string
     modelValue: string
+    label?: string
+    type?: string
   }>(),
   {
-    placeholder: ''
+    placeholder: '',
+    label: '',
+    type: 'text'
   }
 )
 </script>
 
 <template>
-  <input
-    :placeholder="placeholder"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
+  <div class="wrapper custom-input">
+    <div class="label">{{ label }}</div>
+    <input
+      :placeholder="placeholder"
+      :type="type"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
+  </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .label {
+    color: var(--color-text-label);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.52px;
+    text-align: left;
+  }
+}
+
 input {
-  border-radius: 5px;
+  border-radius: 8px;
   background: var(--vt-c-white);
   border: none;
   outline: none;
@@ -31,5 +53,13 @@ input {
   line-height: 14.52px;
   text-align: left;
   color: var(--color-input-text);
+
+  &[type='number'] {
+    appearance: none;
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
 }
 </style>

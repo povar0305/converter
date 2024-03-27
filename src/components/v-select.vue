@@ -81,6 +81,11 @@ function clickBySelect(event) {
     align-items: center;
     cursor: pointer;
     position: relative;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: var(--color-text);
 
     svg {
       transition: transform 0.3s;
