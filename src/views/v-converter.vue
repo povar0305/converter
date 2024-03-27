@@ -23,7 +23,16 @@ onMounted(() => {
 })
 
 const currencyListBySelect = computed(() => {
-  return store.state.currencyListBySelected[selectedCurrency.value]
+  if (!searchQ.value) {
+    return store.state.currencyListBySelected[selectedCurrency.value]
+  } else {
+    return Object.keys(store.state.currencyListBySelected[selectedCurrency.value])
+      .filter((key) => key.includes(searchQ.value))
+      .reduce((obj, key) => {
+        obj[key] = store.state.currencyListBySelected[selectedCurrency.value][key]
+        return obj
+      }, {})
+  }
 })
 </script>
 
@@ -71,5 +80,10 @@ const currencyListBySelect = computed(() => {
       color: var(--color-input-text);
     }
   }
+}
+
+::v-deep .list {
+  height: 75vh;
+  overflow-y: auto;
 }
 </style>
