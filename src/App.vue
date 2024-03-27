@@ -1,6 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import VButton from '@/components/v-button.vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+//
+// const trackCounter = computed(() => {
+//   return store.getters.getCounter
+// })
 </script>
 
 <template>

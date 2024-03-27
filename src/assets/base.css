@@ -3,7 +3,7 @@
     --color-shadow: #46464626;
     --color-text: #464646;
     --color-accent: #E28049;
-    
+    --color-input-text: #838383;
     --vt-c-white: #ffffff;
     --vt-c-white-soft: #f8f8f8;
     --vt-c-white-mute: #f2f2f2;
@@ -94,5 +94,5 @@ body {
 }
 
 * {
-    font-family: 'Inter';
+    font-family: Inter;
 }
