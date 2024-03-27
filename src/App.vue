@@ -1,15 +1,28 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import VButton from '@/components/v-button.vue'
 </script>
 
 <template>
   <div class="wrapper">
-    <RouterLink to="/currencies">1</RouterLink>
-    <RouterLink to="/converter">2</RouterLink>
+    <div class="links">
+      <RouterLink v-slot="{ isActive }" to="/currencies">
+        <v-button :active="isActive"> Валюты</v-button>
+      </RouterLink>
+
+      <RouterLink v-slot="{ isActive }" to="/converter">
+        <v-button :active="isActive"> Конвертер</v-button>
+      </RouterLink>
+    </div>
+
     <RouterView />
   </div>
-
 </template>
 
 <style scoped>
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
 </style>
