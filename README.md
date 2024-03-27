@@ -14,7 +14,7 @@ disable Vetur).
 [Sass](https://www.npmjs.com/package/sass). [Vuex](https://vuex.vuejs.org/guide). [Pretter](https://www.npmjs.com/package/prettier).
 [Vite-svg-loader](https://www.npmjs.com/package/vite-svg-loader)
 [axios](https://www.npmjs.com/package/axios).
-[vue-router] (https://router.vuejs.org/).
+[vue-router](https://router.vuejs.org/).
 
 Дизайн
 макет - [тут](https://www.figma.com/file/SoGANqCH9vu0J6Fmehyexr/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?type=design&node-id=0%3A1&mode=design&t=4CqbzhtRQUUWVbHs-1)
