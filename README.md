@@ -66,7 +66,7 @@ npm run dev
 npm run build
 ```
 
-### Автоматическое исправление от[ESLint](https://eslint.org/)
+### Автоматическое исправление от [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
