@@ -14,11 +14,6 @@ const store = createStore({
       currencyListBySelected: {}
     }
   },
-  getters: {
-    // getCounter(state) {
-    //   return state.counter
-    // }
-  },
   mutations: {
     setCurrencyList(state, productData) {
       state.currencyList = productData
@@ -38,9 +33,9 @@ const store = createStore({
           console.log(e)
         })
     },
-    fetchCurrencyListBySelect({ commit }, selectedCurrency) {
+    async fetchCurrencyListBySelect({ commit }, selectedCurrency) {
       if (selectedCurrency) {
-        axios
+        await axios
           .get(
             'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/' +
               selectedCurrency +
