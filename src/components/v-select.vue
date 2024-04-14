@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import CaretDown from '@/components/icons/CaretDown.svg'
 
-const props = defineProps<{
+defineProps<{
   list: any
   modelValue: string
 }>()

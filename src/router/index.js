@@ -10,6 +10,7 @@ const router = createRouter({
       name: 'currencies',
       component: VCurrencies
     },
+    { path: '/', redirect: '/currencies' },
     {
       path: '/converter',
       name: 'converter',
